@@ -1,11 +1,9 @@
 const express = require('express');
 const app = express();
 const provider = require('./provider.js');
-// const router = express.Router();
 
 app.use(express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/public'));
-// app.use(express.static(__dirname + '/script'));
 
 app.get('/', function(req, res) {
      res.render('index.html');

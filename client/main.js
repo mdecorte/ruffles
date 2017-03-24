@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, hashHistory } from 'react-router'
+import { HashRouter, Route, Link } from 'react-router-dom'
 import { NsDataProvider } from './js/ns/NsDataProvider';
 
 class Vertrektijden extends React.Component {
@@ -94,9 +94,11 @@ class Test extends React.Component {
 }
 
 ReactDOM.render((
-  <Router history={hashHistory}>
-    <Route path="/" component={Test}/>
-    <Route path="/vertrektijden" component={Vertrektijden}/>
-    <Route path="/storingen" component={Storingen}/>
-  </Router>
+    <HashRouter>
+        <div>
+            <Route exact path="/" component={Test}/>
+            <Route path="/vertrektijden" component={Vertrektijden}/>
+            <Route path="/storingen" component={Storingen}/>
+        </div>
+    </HashRouter>
 ), document.getElementById('app'));
